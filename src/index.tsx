@@ -6,12 +6,24 @@ import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import ErrorPage from "components/pages/ErrorPage";
+import HomePage from "components/pages/HomePage";
+import PokedexPage, {
+  loader as pokedexLoader,
+} from "components/pages/PokedexPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: "/pokedex",
+        element: <PokedexPage />,
+        loader: pokedexLoader,
+      },
+    ],
   },
 ]);
 

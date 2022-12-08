@@ -6,8 +6,8 @@ export default function ErrorPage(): ReactElement {
   console.error(error);
 
   return (
-    <div>
-      <h1>Oops!</h1>
+    <div className="page-wrapper">
+      <h1 className="title">Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       {isRouteErrorResponse(error) ? (
         <p>

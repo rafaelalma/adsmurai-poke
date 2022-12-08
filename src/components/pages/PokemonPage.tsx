@@ -20,8 +20,8 @@ export default function PokemonPage(): ReactElement {
   const pokemon = useLoaderData() as PokemonResponse;
 
   return (
-    <div>
-      <h1>{stringUtils.capitalize(pokemon.name)}</h1>
+    <div className="page-wrapper">
+      <h1 className="title">{stringUtils.capitalize(pokemon.name)}</h1>
       {pokemon.sprites.front_default ? (
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       ) : null}

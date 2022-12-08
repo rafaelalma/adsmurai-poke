@@ -37,8 +37,8 @@ export default function PokedexPage(): ReactElement {
     : null;
 
   return (
-    <div>
-      <h1>Pokedex</h1>
+    <div className="page-wrapper">
+      <h1 className="title">Pokedex</h1>
       {pokemons.length ? (
         <ul>
           {pokemons.map((pokemon) => (

@@ -12,7 +12,6 @@ describe("Pokemon list", () => {
     cy.get("h1").should("contain", "Pokedex");
     // AND
     // Shows a list with Pokemon names
-    cy.get("ul");
-    cy.get("li").first().should("contain", "Bulbasaur");
+    cy.get("ul").get("li").first().should("contain", "Bulbasaur");
   });
 });

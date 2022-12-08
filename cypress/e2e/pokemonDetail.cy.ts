@@ -11,6 +11,12 @@ describe("Pokemon detail", () => {
     cy.url().should("include", "/bulbasaur");
     cy.get("h1").should("contain", "Bulbasaur");
     // AND
-    // Shows its characteristics
+    // Shows its types
+    cy.get("ul")
+      .get("li")
+      .as("typeListItem")
+      .first()
+      .should("contain", "grass");
+    cy.get("@typeListItem").last().should("contain", "poison");
   });
 });

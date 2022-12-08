@@ -6,6 +6,9 @@ import HomePage from "components/pages/HomePage";
 import PokedexPage, {
   loader as pokedexLoader,
 } from "components/pages/PokedexPage";
+import PokemonPage, {
+  loader as pokemonLoader,
+} from "components/pages/PokemonPage";
 
 const routerInstance = createBrowserRouter([
   {
@@ -18,6 +21,11 @@ const routerInstance = createBrowserRouter([
         path: "/pokedex",
         element: <PokedexPage />,
         loader: pokedexLoader,
+      },
+      {
+        path: "/pokedex/:pokemonId",
+        element: <PokemonPage />,
+        loader: pokemonLoader,
       },
     ],
   },

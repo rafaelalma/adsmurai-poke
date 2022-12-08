@@ -9,3 +9,19 @@ export type PokemonListResponse = {
   previous: string | null;
   results: PokemonListElement[];
 };
+
+export type PokemonResponse = {
+  id: number;
+  name: string;
+  sprites: {
+    front_default: string | null;
+  };
+  types: [
+    {
+      slot: number;
+      type: {
+        name: string;
+      };
+    }
+  ];
+};

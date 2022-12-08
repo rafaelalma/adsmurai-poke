@@ -3,8 +3,13 @@ import { PokemonListResponse, PokemonResponse } from "types/pokemonType";
 
 const endpoint = "pokemon";
 
-const getAll = async (): Promise<PokemonListResponse> => {
-  const response = await axiosInstance.get(endpoint);
+const getAll = async (
+  limit = "20",
+  offset = "0"
+): Promise<PokemonListResponse> => {
+  let query = `?limit=${limit}&offset=${offset}`;
+
+  const response = await axiosInstance.get(endpoint + query);
   return response.data;
 };
 

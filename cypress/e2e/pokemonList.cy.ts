@@ -2,7 +2,7 @@ describe("Pokemon list", () => {
   it("Shows a list with Pokemon names", () => {
     // GIVEN
     // The user is in the home page
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
     // WHEN
     // The user clicks in the Pokedex link
     cy.contains("a", "Pokedex").click();

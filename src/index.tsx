@@ -1,38 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
 import "./index.scss";
+import routerInstance from "routerInstance";
 import reportWebVitals from "./reportWebVitals";
-import App from "./App";
-import ErrorPage from "components/pages/ErrorPage";
-import HomePage from "components/pages/HomePage";
-import PokedexPage, {
-  loader as pokedexLoader,
-} from "components/pages/PokedexPage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <HomePage /> },
-      {
-        path: "/pokedex",
-        element: <PokedexPage />,
-        loader: pokedexLoader,
-      },
-    ],
-  },
-]);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={routerInstance} />
   </React.StrictMode>
 );
 

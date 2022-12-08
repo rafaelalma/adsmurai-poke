@@ -1,9 +1,11 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { RouterProvider } from "react-router-dom";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import routerInstance from "routerInstance";
+
+test("Renders App", () => {
+  render(<RouterProvider router={routerInstance} />);
+
+  const homeTitle = screen.getByText("Home");
+  expect(homeTitle).toBeInTheDocument();
 });

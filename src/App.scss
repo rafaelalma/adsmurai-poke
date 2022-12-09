@@ -1,42 +1,52 @@
+@use "./styles/colors";
+@use "./styles/spacing";
+
 .app-wrapper {
   padding: 16px;
 }
 
 .header {
-  background-color: rgb(208, 208, 208);
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
+  background-color: colors.$secondary-color;
+  padding: spacing.$s-2;
+  border-radius: spacing.$s-1;
+  margin-bottom: spacing.$s-2;
 
-.header__list {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: spacing.$s-2;
+  }
 
-.header__list-item {
-  list-style: none;
-}
+  &__list-item {
+    list-style: none;
+  }
 
-.header__link {
-  text-decoration: none;
-  font-weight: bold;
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    color: colors.$primary-color;
+
+    &:hover,
+    &:active {
+      color: colors.$primary-color--dark;
+    }
+  }
 }
 
 .main {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: spacing.$s-2;
+  padding-right: spacing.$s-2;
 }
 
 .page-wrapper {
-  background-color: rgb(208, 208, 208);
-  padding: 16px;
-  border-radius: 8px;
+  background-color: colors.$secondary-color;
+  padding: spacing.$s-2;
+  border-radius: spacing.$s-1;
 }
 
 .title {
-  font-size: 24px;
+  font-size: spacing.$s-3;
+  color: colors.$primary-color--dark;
 }

@@ -1,18 +1,6 @@
+@use "./styles/fonts";
+
 @import-normalize;
-
-@font-face {
-  font-family: "Roboto";
-  src: url(./fonts/Roboto-Light-webfont.woff) format("woff");
-  font-style: normal;
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url(./fonts/Roboto-Bold-webfont.woff) format("woff");
-  font-style: normal;
-  font-weight: bold;
-}
 
 body {
   margin: 0;

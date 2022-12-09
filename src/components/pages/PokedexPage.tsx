@@ -6,6 +6,7 @@ import {
   useLoaderData,
 } from "react-router-dom";
 
+import "./PokedexPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
@@ -40,10 +41,10 @@ export default function PokedexPage(): ReactElement {
     <div className="page-wrapper">
       <h1 className="title">Pokedex</h1>
       {pokemons.length ? (
-        <ul>
+        <ul className="pokemon-list">
           {pokemons.map((pokemon) => (
-            <li key={pokemon.name}>
-              <Link to={pokemon.name}>
+            <li className="pokemon-list__list-item" key={pokemon.name}>
+              <Link className="pokemon-list__link" to={pokemon.name}>
                 {stringUtils.capitalize(pokemon.name)}
               </Link>
             </li>

@@ -40,7 +40,7 @@ export default function App(): ReactElement {
           </ul>
         </nav>
       </header>
-      <main className="main">
+      <main className="page-wrapper">
         <Outlet />
       </main>
     </div>

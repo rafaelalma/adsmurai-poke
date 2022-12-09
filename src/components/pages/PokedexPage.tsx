@@ -38,7 +38,7 @@ export default function PokedexPage(): ReactElement {
     : null;
 
   return (
-    <div className="page-wrapper">
+    <div>
       <h1 className="title">Pokedex</h1>
       {pokemons.length ? (
         <ul className="pokemon-list">
@@ -55,17 +55,33 @@ export default function PokedexPage(): ReactElement {
           <i>No pokemons</i>
         </p>
       )}
-      <Form>
+      <Form className="pagination">
         {previousOffset ? (
-          <button name="offset" value={previousOffset}>
+          <button
+            className="pagination__button"
+            name="offset"
+            value={previousOffset}
+          >
             Previous
           </button>
-        ) : null}
+        ) : (
+          <button className="pagination__button pagination__button--disabled">
+            Previous
+          </button>
+        )}
         {nextOffset ? (
-          <button name="offset" value={nextOffset}>
+          <button
+            className="pagination__button"
+            name="offset"
+            value={nextOffset}
+          >
             Next
           </button>
-        ) : null}
+        ) : (
+          <button className="pagination__button pagination__button--disabled">
+            Next
+          </button>
+        )}
       </Form>
     </div>
   );

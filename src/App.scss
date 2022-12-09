@@ -37,11 +37,6 @@
   }
 }
 
-.main {
-  padding-left: spacing.$s-2;
-  padding-right: spacing.$s-2;
-}
-
 .page-wrapper {
   background-color: colors.$secondary-color;
   padding: spacing.$s-2;
@@ -51,4 +46,5 @@
 .title {
   font-size: spacing.$s-3;
   color: colors.$primary-color--dark;
+  text-align: center;
 }

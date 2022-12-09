@@ -28,6 +28,8 @@
     font-weight: bold;
     color: colors.$primary-color;
 
+    &--active,
+    &--pending,
     &:hover,
     &:active {
       color: colors.$primary-color--dark;

@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 import "./App.scss";
 
@@ -11,14 +10,32 @@ export default function App(): ReactElement {
         <nav>
           <ul className="header__list">
             <li className="header__list-item">
-              <Link className="header__link" to="/">
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "header__link header__link--active"
+                    : isPending
+                    ? "header__link header__link--pending"
+                    : "header__link"
+                }
+                to="/"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="header__list-item">
-              <Link className="header__link" to="pokedex">
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "header__link header__link--active"
+                    : isPending
+                    ? "header__link header__link--pending"
+                    : "header__link"
+                }
+                to="pokedex"
+              >
                 Pokedex
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

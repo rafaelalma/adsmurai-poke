@@ -1,0 +1,24 @@
+@use "styles/colors";
+@use "styles/spacing";
+
+.card {
+  list-style: none;
+
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: spacing.$s-2;
+    background-color: white;
+    border-radius: spacing.$s-1;
+    width: 100px;
+    text-align: center;
+    color: colors.$primary-color;
+
+    &:hover,
+    &:visited,
+    &:active {
+      color: colors.$primary-color--dark;
+    }
+  }
+}

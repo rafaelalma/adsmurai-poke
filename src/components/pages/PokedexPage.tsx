@@ -1,17 +1,12 @@
 import { ReactElement } from "react";
-import {
-  Form,
-  Link,
-  LoaderFunctionArgs,
-  useLoaderData,
-} from "react-router-dom";
+import { Form, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 
 import "./PokedexPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
-import stringUtils from "utils/stringUtils";
 import appConstants from "appConstants";
 import { Button } from "components/atoms/Button";
+import Card from "components/molecules/Card";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -51,11 +46,7 @@ export default function PokedexPage(): ReactElement {
         {pokemons.length ? (
           <ul data-cy="pokemon-list" className="pokemon-list">
             {pokemons.map((pokemon) => (
-              <li className="pokemon-list__list-item" key={pokemon.name}>
-                <Link className="pokemon-list__link" to={pokemon.name}>
-                  {stringUtils.capitalize(pokemon.name)}
-                </Link>
-              </li>
+              <Card key={pokemon.name} name={pokemon.name} />
             ))}
           </ul>
         ) : (

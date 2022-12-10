@@ -37,7 +37,8 @@
     "build-storybook": "build-storybook -s public",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "tests": "npm run ci-test && npm run cypress:run"
+    "tests": "npm run ci-test && npm run cypress:run",
+    "launch-build": "npm run build && npx serve -s build"
   },
   "eslintConfig": {
     "extends": [

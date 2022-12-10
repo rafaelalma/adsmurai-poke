@@ -1,6 +1,5 @@
 export type PokemonListElement = {
   name: string;
-  url: string;
 };
 
 export type PokemonListResponse = {

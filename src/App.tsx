@@ -1,9 +1,11 @@
 import { ReactElement } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigation } from "react-router-dom";
 
 import "./App.scss";
 
 export default function App(): ReactElement {
+  const navigation = useNavigation();
+
   return (
     <div className="app-wrapper">
       <header className="header">
@@ -40,7 +42,13 @@ export default function App(): ReactElement {
           </ul>
         </nav>
       </header>
-      <main className="page-wrapper">
+      <main
+        className={
+          navigation.state === "loading"
+            ? "page-wrapper page-wrapper--loading"
+            : "page-wrapper"
+        }
+      >
         <Outlet />
       </main>
     </div>

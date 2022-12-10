@@ -47,6 +47,10 @@
   margin: spacing.$s-2;
   margin-top: spacing.$s-1;
   flex-grow: 1;
+
+  &--loading {
+    opacity: 0.5;
+  }
 }
 
 .title {

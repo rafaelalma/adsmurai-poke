@@ -4,7 +4,7 @@
 
 App to list pokemons from [PokeApi](https://pokeapi.co/)
 
-## How does Adsmurai-Poke do it
+## How does Adsmurai-Poke do it
 
 With the help of [SASS](https://sass-lang.com/)
 

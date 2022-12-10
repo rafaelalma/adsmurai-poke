@@ -83,7 +83,7 @@ export default function PokedexPage(): ReactElement {
         <p
           data-cy="pagination-pages-text"
           className="pagination__pages-text"
-        >{`Page ${page} of ${totalPages}`}</p>
+        >{`${page} - ${totalPages}`}</p>
         {nextOffset ? (
           <button
             className="pagination__button"

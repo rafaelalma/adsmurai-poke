@@ -1,4 +1,4 @@
-const LIMIT = 20;
+const LIMIT = 50;
 
 const appConstants = {
   LIMIT,

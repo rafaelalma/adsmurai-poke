@@ -47,10 +47,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   &__pages-text {
     font-weight: bold;
     color: colors.$primary-color--dark;
+    margin: 0;
   }
 
   &__button {
@@ -62,6 +64,7 @@
     font-style: fonts.$font-stack;
     font-weight: bold;
     color: white;
+    width: 100px;
 
     &--disabled {
       cursor: default;

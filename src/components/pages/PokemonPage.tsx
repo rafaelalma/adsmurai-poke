@@ -1,5 +1,9 @@
 import { ReactElement } from "react";
-import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
+import {
+  LoaderFunctionArgs,
+  useLoaderData,
+  useNavigate,
+} from "react-router-dom";
 
 import "./PokemonPage.scss";
 import pokemonService from "services/pokemonService";
@@ -23,27 +27,38 @@ export default function PokemonPage(): ReactElement {
 
   const { imgRef, loaded, onLoad } = useImageLoaded();
 
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
   return (
-    <div className="pokemon-detail">
-      <h1 className="title">{stringUtils.capitalize(pokemon.name)}</h1>
-      {pokemon.sprites.front_default ? (
-        <img
-          ref={imgRef}
-          onLoad={onLoad}
-          className="pokemon-detail__sprite"
-          src={pokemon.sprites.front_default}
-          alt={pokemon.name}
-          hidden={!loaded}
-        />
-      ) : null}
-      {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
-      <ul className="pokemon-detail__type-list">
-        {pokemon.types.map((type) => (
-          <li className="pokemon-detail__type-list-item" key={type.slot}>
-            {type.type.name}
-          </li>
-        ))}
-      </ul>
+    <div className="pokemon-page-wrapper">
+      <div className="pokemon-detail">
+        <h1 className="title">{stringUtils.capitalize(pokemon.name)}</h1>
+        {pokemon.sprites.front_default ? (
+          <img
+            ref={imgRef}
+            onLoad={onLoad}
+            className="pokemon-detail__sprite"
+            src={pokemon.sprites.front_default}
+            alt={pokemon.name}
+            hidden={!loaded}
+          />
+        ) : null}
+        {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
+        <ul data-cy="type-list" className="pokemon-detail__type-list">
+          {pokemon.types.map((type) => (
+            <li className="pokemon-detail__type-list-item" key={type.slot}>
+              {type.type.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button className="back-button" onClick={handleBackClick}>
+        Back
+      </button>
     </div>
   );
 }

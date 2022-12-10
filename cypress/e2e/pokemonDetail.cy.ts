@@ -12,11 +12,7 @@ describe("Pokemon detail", () => {
     cy.get("h1").should("contain", "Bulbasaur");
     // AND
     // Shows its types
-    cy.get("ul")
-      .get("li")
-      .as("typeListItem")
-      .first()
-      .should("contain", "grass");
-    cy.get("@typeListItem").last().should("contain", "poison");
+    cy.get('[data-cy="type-list"]').contains("grass");
+    cy.get('[data-cy="type-list"]').contains("poison");
   });
 });

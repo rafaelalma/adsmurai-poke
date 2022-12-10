@@ -6,7 +6,14 @@
   background-color: white;
   border-radius: spacing.$s-1;
   padding: spacing.$s-1;
-  margin-bottom: spacing.$s-2;
+  margin: spacing.$s-2;
+}
+
+.pokemon-page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .pokemon-detail {
@@ -37,4 +44,21 @@
     background-color: white;
     border-radius: spacing.$s-1;
   }
+}
+
+.sprite-wrapper {
+  padding: spacing.$s-2;
+}
+
+.back-button {
+  padding: spacing.$s-1;
+  border-radius: spacing.$s-1;
+  background-color: colors.$primary-color;
+  border: 0;
+  cursor: pointer;
+  font-style: fonts.$font-stack;
+  font-weight: bold;
+  color: white;
+  align-self: start;
+  margin: spacing.$s-2;
 }

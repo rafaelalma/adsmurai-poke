@@ -42,7 +42,7 @@ export default function PokedexPage(): ReactElement {
       <div>
         <h1 className="title">Pokedex</h1>
         {pokemons.length ? (
-          <ul className="pokemon-list">
+          <ul data-cy="pokemon-list" className="pokemon-list">
             {pokemons.map((pokemon) => (
               <li className="pokemon-list__list-item" key={pokemon.name}>
                 <Link className="pokemon-list__link" to={pokemon.name}>

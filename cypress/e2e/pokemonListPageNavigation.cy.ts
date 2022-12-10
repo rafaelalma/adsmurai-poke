@@ -9,7 +9,7 @@ describe("Pokemon list page navigation", () => {
     // THEN
     // The app navigates to the next page in the Pokemon list
     cy.url().should("include", "?offset=20");
-    cy.get("ul").get("li").first().should("contain", "Spearow");
+    cy.get('[data-cy="pokemon-list"]').contains("Spearow");
     // AND
     // WHEN
     // The user clicks the Previous button
@@ -17,6 +17,6 @@ describe("Pokemon list page navigation", () => {
     // THEN
     // The app navigates to the previous page in the Pokemon list
     cy.url().should("include", "?offset=0");
-    cy.get("ul").get("li").last().should("contain", "Raticate");
+    cy.get('[data-cy="pokemon-list"]').contains("Raticate");
   });
 });

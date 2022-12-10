@@ -17,4 +17,8 @@
     cursor: default;
     opacity: 0.5;
   }
+
+  &:hover {
+    background-color: colors.$primary-color--dark;
+  }
 }

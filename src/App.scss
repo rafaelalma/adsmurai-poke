@@ -2,14 +2,17 @@
 @use "./styles/spacing";
 
 .app-wrapper {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .header {
   background-color: colors.$secondary-color;
   padding: spacing.$s-2;
   border-radius: spacing.$s-1;
-  margin-bottom: spacing.$s-2;
+  margin: spacing.$s-2;
+  margin-bottom: spacing.$s-1;
 
   &__list {
     padding: 0;
@@ -41,10 +44,14 @@
   background-color: colors.$secondary-color;
   padding: spacing.$s-2;
   border-radius: spacing.$s-1;
+  margin: spacing.$s-2;
+  margin-top: spacing.$s-1;
+  flex-grow: 1;
 }
 
 .title {
   font-size: spacing.$s-3;
   color: colors.$primary-color--dark;
   text-align: center;
+  margin: spacing.$s-2;
 }

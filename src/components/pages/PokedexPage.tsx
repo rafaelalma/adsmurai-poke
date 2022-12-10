@@ -38,23 +38,25 @@ export default function PokedexPage(): ReactElement {
     : null;
 
   return (
-    <div>
-      <h1 className="title">Pokedex</h1>
-      {pokemons.length ? (
-        <ul className="pokemon-list">
-          {pokemons.map((pokemon) => (
-            <li className="pokemon-list__list-item" key={pokemon.name}>
-              <Link className="pokemon-list__link" to={pokemon.name}>
-                {stringUtils.capitalize(pokemon.name)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>
-          <i>No pokemons</i>
-        </p>
-      )}
+    <div className="pokedex-page-wrapper">
+      <div>
+        <h1 className="title">Pokedex</h1>
+        {pokemons.length ? (
+          <ul className="pokemon-list">
+            {pokemons.map((pokemon) => (
+              <li className="pokemon-list__list-item" key={pokemon.name}>
+                <Link className="pokemon-list__link" to={pokemon.name}>
+                  {stringUtils.capitalize(pokemon.name)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>
+            <i>No pokemons</i>
+          </p>
+        )}
+      </div>
       <Form className="pagination">
         {previousOffset ? (
           <button

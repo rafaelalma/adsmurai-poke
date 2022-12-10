@@ -18,6 +18,10 @@ Following methodologies such as Clean Code, Atomic Design or BEM
 
 With the unquestionable help of libraries such as [Axios](https://axios-http.com/) or [React Router v6.4](https://reactrouter.com/en/main)
 
+Bootstrapped with Create React App
+
+Tested with node v16.17.0 and npm v8.15.0
+
 ## Why Adsmurai-Poke is useful
 
 To help me get a new job, I hope
@@ -35,6 +39,9 @@ To launch the Storybook server:
 
 To build the project in the build folder:
 `npm run build`
+
+To launch the builded project:
+`npm run launch-build`
 
 ## Where to get help and report bugs and issues
 

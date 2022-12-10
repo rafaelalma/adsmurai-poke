@@ -10,14 +10,14 @@ import "./PokedexPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
-
-const LIMIT = "20";
+import appConstants from "appConstants";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
-  const offset = url.searchParams.get("offset") ?? undefined;
+  const offsetString = url.searchParams.get("offset");
+  const offset = offsetString ? Number.parseInt(offsetString, 10) : undefined;
 
-  const pokemons = await pokemonService.getAll(LIMIT, offset);
+  const pokemons = await pokemonService.getAll(appConstants.LIMIT, offset);
   return pokemons;
 }
 
@@ -36,6 +36,12 @@ export default function PokedexPage(): ReactElement {
   const previousOffset = previousUrl
     ? previousUrl.searchParams.get("offset")
     : null;
+
+  const totalPages = Math.round(pokemonListResponse.count / appConstants.LIMIT);
+
+  const page = nextOffset
+    ? Math.round(Number.parseInt(nextOffset) / appConstants.LIMIT)
+    : totalPages;
 
   return (
     <div className="pokedex-page-wrapper">
@@ -67,10 +73,17 @@ export default function PokedexPage(): ReactElement {
             Previous
           </button>
         ) : (
-          <button className="pagination__button pagination__button--disabled">
+          <button
+            className="pagination__button pagination__button--disabled"
+            disabled
+          >
             Previous
           </button>
         )}
+        <p
+          data-cy="pagination-pages-text"
+          className="pagination__pages-text"
+        >{`Page ${page} of ${totalPages}`}</p>
         {nextOffset ? (
           <button
             className="pagination__button"
@@ -80,7 +93,10 @@ export default function PokedexPage(): ReactElement {
             Next
           </button>
         ) : (
-          <button className="pagination__button pagination__button--disabled">
+          <button
+            className="pagination__button pagination__button--disabled"
+            disabled
+          >
             Next
           </button>
         )}

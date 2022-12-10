@@ -48,6 +48,11 @@
   flex-direction: row;
   justify-content: space-between;
 
+  &__pages-text {
+    font-weight: bold;
+    color: colors.$primary-color--dark;
+  }
+
   &__button {
     padding: spacing.$s-1;
     border-radius: spacing.$s-1;

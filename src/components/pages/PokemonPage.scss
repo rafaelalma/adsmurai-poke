@@ -1,6 +1,6 @@
-@use "./styles/colors";
-@use "./styles/spacing";
-@use "./styles/fonts";
+@use "styles/colors";
+@use "styles/spacing";
+@use "styles/fonts";
 
 %sprite {
   background-color: white;
@@ -51,15 +51,6 @@
 }
 
 .back-button {
-  padding: spacing.$s-1;
-  border-radius: spacing.$s-1;
-  background-color: colors.$primary-color;
-  border: 0;
-  cursor: pointer;
-  font-style: fonts.$font-stack;
-  font-weight: bold;
-  color: white;
   align-self: start;
   margin: spacing.$s-2;
-  width: 100px;
 }

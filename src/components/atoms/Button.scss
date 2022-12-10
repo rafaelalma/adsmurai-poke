@@ -1,0 +1,20 @@
+@use "styles/colors";
+@use "styles/spacing";
+@use "styles/fonts";
+
+.button {
+  cursor: pointer;
+  padding: spacing.$s-1;
+  border-radius: spacing.$s-1;
+  border: 0;
+  font-style: fonts.$font-stack;
+  font-weight: bold;
+  width: 100px;
+  background-color: colors.$primary-color;
+  color: white;
+
+  &--disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

@@ -11,6 +11,7 @@ import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
 import appConstants from "appConstants";
+import { Button } from "components/atoms/Button";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -65,40 +66,18 @@ export default function PokedexPage(): ReactElement {
       </div>
       <Form className="pagination">
         {previousOffset ? (
-          <button
-            className="pagination__button"
-            name="offset"
-            value={previousOffset}
-          >
-            Previous
-          </button>
+          <Button label="Previous" name="offset" value={previousOffset} />
         ) : (
-          <button
-            className="pagination__button pagination__button--disabled"
-            disabled
-          >
-            Previous
-          </button>
+          <Button label="Previous" disabled />
         )}
         <p
           data-cy="pagination-pages-text"
           className="pagination__pages-text"
         >{`${page} - ${totalPages}`}</p>
         {nextOffset ? (
-          <button
-            className="pagination__button"
-            name="offset"
-            value={nextOffset}
-          >
-            Next
-          </button>
+          <Button label="Next" name="offset" value={nextOffset} />
         ) : (
-          <button
-            className="pagination__button pagination__button--disabled"
-            disabled
-          >
-            Next
-          </button>
+          <Button label="Next" disabled />
         )}
       </Form>
     </div>

@@ -10,6 +10,7 @@ import pokemonService from "services/pokemonService";
 import { PokemonResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
 import useImageLoaded from "hooks/useImageLoaded";
+import { Button } from "components/atoms/Button";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const pokemonId = params.pokemonId;
@@ -56,9 +57,7 @@ export default function PokemonPage(): ReactElement {
           ))}
         </ul>
       </div>
-      <button className="back-button" onClick={handleBackClick}>
-        Back
-      </button>
+      <Button classN="back-button" label="Back" onClick={handleBackClick} />
     </div>
   );
 }

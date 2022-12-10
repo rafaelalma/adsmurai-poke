@@ -6,7 +6,7 @@ import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
 import appConstants from "appConstants";
 import { Button } from "components/atoms/Button";
-import Card from "components/molecules/Card";
+import CardList from "components/organisms/CardList";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -43,17 +43,7 @@ export default function PokedexPage(): ReactElement {
     <div className="pokedex-page-wrapper">
       <div>
         <h1 className="title">Pokedex</h1>
-        {pokemons.length ? (
-          <ul data-cy="pokemon-list" className="pokemon-list">
-            {pokemons.map((pokemon) => (
-              <Card key={pokemon.name} name={pokemon.name} />
-            ))}
-          </ul>
-        ) : (
-          <p>
-            <i>No pokemons</i>
-          </p>
-        )}
+        <CardList pokemons={pokemons} />
       </div>
       <Form className="pagination">
         {previousOffset ? (

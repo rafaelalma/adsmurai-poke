@@ -5,6 +5,7 @@ import "./PokemonPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
+import useImageLoaded from "hooks/useImageLoaded";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const pokemonId = params.pokemonId;
@@ -20,18 +21,22 @@ export async function loader({ params }: LoaderFunctionArgs) {
 export default function PokemonPage(): ReactElement {
   const pokemon = useLoaderData() as PokemonResponse;
 
+  const { imgRef, loaded, onLoad } = useImageLoaded();
+
   return (
     <div className="pokemon-detail">
       <h1 className="title">{stringUtils.capitalize(pokemon.name)}</h1>
       {pokemon.sprites.front_default ? (
         <img
+          ref={imgRef}
+          onLoad={onLoad}
           className="pokemon-detail__sprite"
           src={pokemon.sprites.front_default}
           alt={pokemon.name}
+          hidden={!loaded}
         />
-      ) : (
-        <div className="pokemon-detail__sprite--pending" />
-      )}
+      ) : null}
+      {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
       <ul className="pokemon-detail__type-list">
         {pokemon.types.map((type) => (
           <li className="pokemon-detail__type-list-item" key={type.slot}>

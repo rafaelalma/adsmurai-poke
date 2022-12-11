@@ -9,11 +9,10 @@ import "./PokemonPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
-import useImageLoaded from "hooks/useImageLoaded";
 import Button from "components/atoms/Button";
 import TypeChip from "components/atoms/TypeChip";
 import TopBottomTemplate from "components/templates/TopBottomTemplate";
-import Sprite from "components/atoms/Sprite";
+import SpriteWithUseImageLoaded from "helpers/SpriteWithUseImageLoaded";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const pokemonId = params.pokemonId;
@@ -29,8 +28,6 @@ export async function loader({ params }: LoaderFunctionArgs) {
 export default function PokemonPage(): ReactElement {
   const pokemon = useLoaderData() as PokemonResponse;
 
-  const { imgRef, loaded, onLoad } = useImageLoaded();
-
   const navigate = useNavigate();
 
   const handleBackClick = () => {
@@ -44,15 +41,20 @@ export default function PokemonPage(): ReactElement {
       title={stringUtils.capitalize(pokemon.name)}
       topComponent={
         <>
-          {pokemon.sprites.front_default ? (
-            <Sprite
-              spriteSrc={pokemon.sprites.front_default}
-              alt={pokemon.name}
-              imgRef={imgRef}
-              loaded={loaded}
-              onLoad={onLoad}
-            />
-          ) : null}
+          <div>
+            {pokemon.sprites.front_default ? (
+              <SpriteWithUseImageLoaded
+                spriteSrc={pokemon.sprites.front_default}
+                alt={pokemon.name}
+              />
+            ) : null}
+            {pokemon.sprites.back_default ? (
+              <SpriteWithUseImageLoaded
+                spriteSrc={pokemon.sprites.back_default}
+                alt={pokemon.name}
+              />
+            ) : null}
+          </div>
           <ul data-cy="type-list" className="pokemon-detail__type-list">
             {pokemon.types.map((type) => (
               <TypeChip key={type.slot} type={type.type.name} />

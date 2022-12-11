@@ -14,6 +14,7 @@ export type PokemonResponse = {
   name: string;
   sprites: {
     front_default: string | null;
+    back_default: string | null;
   };
   types: [
     {

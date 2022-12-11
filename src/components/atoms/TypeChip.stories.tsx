@@ -11,7 +11,22 @@ const Template: ComponentStory<typeof TypeChip> = (args) => (
   <TypeChip {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Normal = Template.bind({});
+Normal.args = {
+  type: "normal",
+};
+
+export const Fire = Template.bind({});
+Fire.args = {
+  type: "fire",
+};
+
+export const Water = Template.bind({});
+Water.args = {
+  type: "water",
+};
+
+export const Grass = Template.bind({});
+Grass.args = {
   type: "grass",
 };

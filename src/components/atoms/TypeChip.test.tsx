@@ -11,4 +11,11 @@ describe("TypeChip", () => {
     const typeChipText = screen.getByText("grass");
     expect(typeChipText).toBeInTheDocument();
   });
+
+  it("renders with type color class", () => {
+    render(<TypeChip type="water" />);
+
+    const typeChip = screen.getByRole("listitem", { name: "" });
+    expect(typeChip).toHaveClass("type-chip--water");
+  });
 });

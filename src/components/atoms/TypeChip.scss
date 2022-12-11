@@ -1,12 +1,91 @@
 @use "styles/colors";
 @use "styles/spacing";
 
+@mixin type($type: colors.$normal-type-color) {
+  background-color: $type;
+  box-shadow: 0 0 1px rgba($type, 0.25);
+  color: white;
+}
+
 .type-chip {
   list-style: none;
   padding: spacing.$s-1;
   background-color: white;
   border-radius: spacing.$s-1;
-  border: 1px solid colors.$primary-color;
   text-align: center;
-  width: 100px;
+  width: 60px;
+  font-size: 14px;
+  font-weight: bold;
+
+  &--normal {
+    @include type;
+  }
+
+  &--fire {
+    @include type($type: colors.$fire-type-color);
+  }
+
+  &--water {
+    @include type($type: colors.$water-type-color);
+  }
+
+  &--grass {
+    @include type($type: colors.$grass-type-color);
+  }
+
+  &--electric {
+    @include type($type: colors.$electric-type-color);
+  }
+
+  &--ice {
+    @include type($type: colors.$ice-type-color);
+  }
+
+  &--fighting {
+    @include type($type: colors.$fighting-type-color);
+  }
+
+  &--poison {
+    @include type($type: colors.$poison-type-color);
+  }
+
+  &--ground {
+    @include type($type: colors.$ground-type-color);
+  }
+
+  &--flying {
+    @include type($type: colors.$flying-type-color);
+  }
+
+  &--psychic {
+    @include type($type: colors.$psychic-type-color);
+  }
+
+  &--bug {
+    @include type($type: colors.$bug-type-color);
+  }
+
+  &--rock {
+    @include type($type: colors.$rock-type-color);
+  }
+
+  &--ghost {
+    @include type($type: colors.$ghost-type-color);
+  }
+
+  &--dark {
+    @include type($type: colors.$dark-type-color);
+  }
+
+  &--dragon {
+    @include type($type: colors.$dragon-type-color);
+  }
+
+  &--steel {
+    @include type($type: colors.$steel-type-color);
+  }
+
+  &--fairy {
+    @include type($type: colors.$fairy-type-color);
+  }
 }

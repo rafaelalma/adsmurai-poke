@@ -1,5 +1,6 @@
+import MainTemplate from "components/templates/MainTemplate";
 import { ReactElement } from "react";
-import { useRouteError } from "react-router-dom";
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 export default function ErrorPage(): ReactElement {
   const error = useRouteError();
@@ -7,15 +8,21 @@ export default function ErrorPage(): ReactElement {
 
   return (
     <div className="app-wrapper">
-      <div className="page-wrapper page-wrapper--error">
-        <h1 className="title">Oops!</h1>
+      <MainTemplate
+        wrapperClassName="page-wrapper page-wrapper--error"
+        title="Oops!"
+      >
         <p>Sorry, an unexpected error has occurred.</p>
         {error instanceof Error ? (
           <p>
             <strong>{error.message}</strong>
           </p>
+        ) : isRouteErrorResponse(error) ? (
+          <p>
+            <strong>{error.statusText}</strong>
+          </p>
         ) : null}
-      </div>
+      </MainTemplate>
     </div>
   );
 }

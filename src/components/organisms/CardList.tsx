@@ -8,6 +8,7 @@ import appConstants from "appConstants";
 type CardListProps = {
   pokemons: PokemonListElement[];
 };
+
 export default function CardList({ pokemons }: CardListProps): ReactElement {
   return (
     <>

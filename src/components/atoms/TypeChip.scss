@@ -1,0 +1,12 @@
+@use "styles/colors";
+@use "styles/spacing";
+
+.type-chip {
+  list-style: none;
+  padding: spacing.$s-1;
+  background-color: white;
+  border-radius: spacing.$s-1;
+  border: 1px solid colors.$primary-color;
+  text-align: center;
+  width: 100px;
+}

@@ -37,13 +37,6 @@
     display: flex;
     gap: spacing.$s-1;
   }
-
-  &__type-list-item {
-    list-style: none;
-    padding: spacing.$s-1;
-    background-color: white;
-    border-radius: spacing.$s-1;
-  }
 }
 
 .sprite-wrapper {

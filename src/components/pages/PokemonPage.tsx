@@ -11,6 +11,7 @@ import { PokemonResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
 import useImageLoaded from "hooks/useImageLoaded";
 import { Button } from "components/atoms/Button";
+import TypeChip from "components/atoms/TypeChip";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const pokemonId = params.pokemonId;
@@ -51,9 +52,7 @@ export default function PokemonPage(): ReactElement {
         {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
         <ul data-cy="type-list" className="pokemon-detail__type-list">
           {pokemon.types.map((type) => (
-            <li className="pokemon-detail__type-list-item" key={type.slot}>
-              {type.type.name}
-            </li>
+            <TypeChip key={type.slot} type={type.type.name} />
           ))}
         </ul>
       </div>

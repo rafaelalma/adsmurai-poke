@@ -4,6 +4,7 @@ import "./CardList.scss";
 import { PokemonListElement } from "types/pokemonType";
 import Card from "components/molecules/Card";
 import appConstants from "appConstants";
+import stringUtils from "utils/stringUtils";
 
 type CardListProps = {
   pokemons: PokemonListElement[];
@@ -15,7 +16,11 @@ export default function CardList({ pokemons }: CardListProps): ReactElement {
       {pokemons.length !== 0 ? (
         <ul data-cy="pokemon-list" className="pokemon-list">
           {pokemons.map((pokemon) => (
-            <Card key={pokemon.name} name={pokemon.name} />
+            <Card
+              key={pokemon.name}
+              name={pokemon.name}
+              id={stringUtils.extractPokemonUrlId(pokemon.url)}
+            />
           ))}
         </ul>
       ) : (

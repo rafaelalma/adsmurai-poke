@@ -5,7 +5,7 @@ import Card from "./Card";
 const mockRouterInstance = createBrowserRouter([
   {
     path: "*",
-    element: <Card name="CARD-NAME" />,
+    element: <Card name="CARD-NAME" id="1" />,
   },
 ]);
 
@@ -20,7 +20,7 @@ describe("Card", () => {
   it("renders capitalized name inside a react router link", () => {
     render(<RouterProvider router={mockRouterInstance} />);
 
-    const cardLink = screen.getByRole("link", { name: "Card-name" });
+    const cardLink = screen.getByRole("link", { name: "#1 Card-name" });
     expect(cardLink).toBeInTheDocument();
   });
 });

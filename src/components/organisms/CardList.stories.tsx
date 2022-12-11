@@ -5,14 +5,14 @@ import { PokemonListElement } from "types/pokemonType";
 import storybookHelpers from "helpers/storybookHelpers";
 
 const pokemons: PokemonListElement[] = [
-  { name: "bulbasaur" },
-  { name: "ivysaur" },
-  { name: "VENUSAUR" },
-  { name: "Charmander" },
-  { name: "charmeleon" },
-  { name: "charizard" },
-  { name: "squirtle" },
-  { name: "wartortle" },
+  { name: "bulbasaur", url: "1" },
+  { name: "ivysaur", url: "2" },
+  { name: "VENUSAUR", url: "3" },
+  { name: "Charmander", url: "4" },
+  { name: "charmeleon", url: "5" },
+  { name: "charizard", url: "6" },
+  { name: "squirtle", url: "7" },
+  { name: "wartortle", url: "8" },
 ];
 
 export default {

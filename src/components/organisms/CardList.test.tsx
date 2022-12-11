@@ -6,8 +6,8 @@ import CardList from "./CardList";
 import appConstants from "appConstants";
 
 const pokemons: PokemonListElement[] = [
-  { name: "bulbasaur" },
-  { name: "ivysaur" },
+  { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/" },
+  { name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/" },
 ];
 
 const getMockRouterInstance = (pokemons: PokemonListElement[]) => {
@@ -32,14 +32,14 @@ describe("CardList", () => {
   it("renders pokemons as links", () => {
     render(<RouterProvider router={getMockRouterInstance(pokemons)} />);
 
-    const pokemonLink = screen.getByRole("link", { name: "Bulbasaur" });
+    const pokemonLink = screen.getByRole("link", { name: "#1 Bulbasaur" });
     expect(pokemonLink).toBeInTheDocument();
   });
 
   it("renders placeholders", () => {
     render(<RouterProvider router={getMockRouterInstance([])} />);
 
-    const pokemonLink = screen.queryByRole("link", { name: "Bulbasaur" });
+    const pokemonLink = screen.queryByRole("link", { name: "#1 Bulbasaur" });
     expect(pokemonLink).not.toBeInTheDocument();
 
     const placeholderTexts = screen.getAllByText("...");

@@ -9,13 +9,13 @@ interface ButtonProps {
   value?: string;
 }
 
-export const Button = ({
+export default function Button({
   label,
   name,
   value,
   classN,
   ...props
-}: ButtonProps) => {
+}: ButtonProps) {
   const classes = props.disabled ? "button button--disabled" : "button";
   const classNameValue = classN
     ? classes.split(" ").concat(classN).join(" ")
@@ -26,4 +26,4 @@ export const Button = ({
       {label}
     </button>
   );
-};
+}

@@ -5,7 +5,7 @@ import "./PokedexPage.scss";
 import pokemonService from "services/pokemonService";
 import { PokemonListResponse } from "types/pokemonType";
 import appConstants from "appConstants";
-import { Button } from "components/atoms/Button";
+import Button from "components/atoms/Button";
 import CardList from "components/organisms/CardList";
 
 export async function loader({ request }: LoaderFunctionArgs) {

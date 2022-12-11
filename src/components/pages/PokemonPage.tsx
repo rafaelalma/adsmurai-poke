@@ -10,7 +10,7 @@ import pokemonService from "services/pokemonService";
 import { PokemonResponse } from "types/pokemonType";
 import stringUtils from "utils/stringUtils";
 import useImageLoaded from "hooks/useImageLoaded";
-import { Button } from "components/atoms/Button";
+import Button from "components/atoms/Button";
 import TypeChip from "components/atoms/TypeChip";
 
 export async function loader({ params }: LoaderFunctionArgs) {

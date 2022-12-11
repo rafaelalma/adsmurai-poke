@@ -12,6 +12,7 @@ import stringUtils from "utils/stringUtils";
 import useImageLoaded from "hooks/useImageLoaded";
 import Button from "components/atoms/Button";
 import TypeChip from "components/atoms/TypeChip";
+import TopBottomTemplate from "components/templates/TopBottomTemplate";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const pokemonId = params.pokemonId;
@@ -36,27 +37,33 @@ export default function PokemonPage(): ReactElement {
   };
 
   return (
-    <div className="pokemon-page-wrapper">
-      <div className="pokemon-detail">
-        <h1 className="title">{stringUtils.capitalize(pokemon.name)}</h1>
-        {pokemon.sprites.front_default ? (
-          <img
-            ref={imgRef}
-            onLoad={onLoad}
-            className="pokemon-detail__sprite"
-            src={pokemon.sprites.front_default}
-            alt={pokemon.name}
-            hidden={!loaded}
-          />
-        ) : null}
-        {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
-        <ul data-cy="type-list" className="pokemon-detail__type-list">
-          {pokemon.types.map((type) => (
-            <TypeChip key={type.slot} type={type.type.name} />
-          ))}
-        </ul>
-      </div>
-      <Button classN="back-button" label="Back" onClick={handleBackClick} />
-    </div>
+    <TopBottomTemplate
+      wrapperClassName="pokemon-page-wrapper"
+      topWrapperClassName="pokemon-detail"
+      title={stringUtils.capitalize(pokemon.name)}
+      topComponent={
+        <>
+          {pokemon.sprites.front_default ? (
+            <img
+              ref={imgRef}
+              onLoad={onLoad}
+              className="pokemon-detail__sprite"
+              src={pokemon.sprites.front_default}
+              alt={pokemon.name}
+              hidden={!loaded}
+            />
+          ) : null}
+          {!loaded ? <div className="pokemon-detail__sprite--pending" /> : null}
+          <ul data-cy="type-list" className="pokemon-detail__type-list">
+            {pokemon.types.map((type) => (
+              <TypeChip key={type.slot} type={type.type.name} />
+            ))}
+          </ul>
+        </>
+      }
+      bottomComponent={
+        <Button classN="back-button" label="Back" onClick={handleBackClick} />
+      }
+    />
   );
 }

@@ -7,6 +7,7 @@ import { PokemonListResponse } from "types/pokemonType";
 import appConstants from "appConstants";
 import Button from "components/atoms/Button";
 import CardList from "components/organisms/CardList";
+import TopBottomTemplate from "components/templates/TopBottomTemplate";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -40,27 +41,28 @@ export default function PokedexPage(): ReactElement {
     : totalPages;
 
   return (
-    <div className="pokedex-page-wrapper">
-      <div>
-        <h1 className="title">Pokedex</h1>
-        <CardList pokemons={pokemons} />
-      </div>
-      <Form className="pagination">
-        {previousOffset ? (
-          <Button label="Previous" name="offset" value={previousOffset} />
-        ) : (
-          <Button label="Previous" disabled />
-        )}
-        <p
-          data-cy="pagination-pages-text"
-          className="pagination__pages-text"
-        >{`${page} - ${totalPages}`}</p>
-        {nextOffset ? (
-          <Button label="Next" name="offset" value={nextOffset} />
-        ) : (
-          <Button label="Next" disabled />
-        )}
-      </Form>
-    </div>
+    <TopBottomTemplate
+      wrapperClassName="pokedex-page-wrapper"
+      title="Pokedex"
+      topComponent={<CardList pokemons={pokemons} />}
+      bottomComponent={
+        <Form className="pagination">
+          {previousOffset ? (
+            <Button label="Previous" name="offset" value={previousOffset} />
+          ) : (
+            <Button label="Previous" disabled />
+          )}
+          <p
+            data-cy="pagination-pages-text"
+            className="pagination__pages-text"
+          >{`${page} - ${totalPages}`}</p>
+          {nextOffset ? (
+            <Button label="Next" name="offset" value={nextOffset} />
+          ) : (
+            <Button label="Next" disabled />
+          )}
+        </Form>
+      }
+    />
   );
 }

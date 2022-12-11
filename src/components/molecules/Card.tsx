@@ -13,7 +13,8 @@ export default function Card({ id, name }: CardProps): ReactElement {
   return (
     <li className="card">
       <Link className="card__link" to={name}>
-        <span className="card__id">{`#${id}`}</span>{" "}
+        <span className="card__id">{`#${id}`}</span>
+        <br />
         {stringUtils.capitalize(name)}
       </Link>
     </li>

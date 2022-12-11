@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: spacing.$s-4;
 
   &__pages-text {
     font-weight: bold;

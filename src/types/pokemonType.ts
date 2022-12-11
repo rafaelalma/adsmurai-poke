@@ -25,4 +25,14 @@ export type PokemonResponse = {
       };
     }
   ];
+  height: number;
+  weight: number;
+  abilities: [
+    {
+      slot: number;
+      ability: {
+        name: string;
+      };
+    }
+  ];
 };

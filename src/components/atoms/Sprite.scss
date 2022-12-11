@@ -2,11 +2,10 @@
 @use "styles/spacing";
 
 .sprite {
-  background-color: white;
+  background-color: colors.$secondary-color--light;
   border-radius: spacing.$s-1;
   padding: spacing.$s-1;
   margin: spacing.$s-2;
-  border: 1px solid colors.$primary-color;
 
   &--pending {
     width: 96px;

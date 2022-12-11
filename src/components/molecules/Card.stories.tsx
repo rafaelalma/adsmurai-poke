@@ -6,6 +6,7 @@ import Card from "./Card";
 
 const pokemon = {
   name: "Bulbasaur",
+  id: "1",
 };
 
 export default {

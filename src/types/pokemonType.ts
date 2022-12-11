@@ -35,4 +35,12 @@ export type PokemonResponse = {
       };
     }
   ];
+  stats: [
+    {
+      base_stat: number;
+      stat: {
+        name: string;
+      };
+    }
+  ];
 };

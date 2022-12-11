@@ -12,6 +12,7 @@
   width: 100px;
   background-color: colors.$primary-color;
   color: white;
+  box-shadow: 4px 4px 1px rgba(colors.$primary-color--dark, 0.5);
 
   &--disabled {
     cursor: default;
@@ -20,5 +21,9 @@
 
   &:hover {
     background-color: colors.$primary-color--dark;
+  }
+
+  &--disabled:hover {
+    background-color: colors.$primary-color;
   }
 }

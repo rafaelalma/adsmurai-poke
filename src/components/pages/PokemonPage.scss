@@ -9,6 +9,7 @@
   background-color: white;
   border-radius: spacing.$s-1;
   padding: spacing.$s-2;
+  box-shadow: 2px 2px 1px rgba(colors.$secondary-color--dark, 0.5);
 
   &__sprite-wrapper {
     display: flex;
@@ -17,8 +18,14 @@
 
   &__row-wrapper {
     display: flex;
-    gap: spacing.$s-4;
     flex-wrap: wrap;
+    gap: spacing.$s-1;
+    background-color: white;
+    border: 2px solid colors.$primary-color--light;
+    box-shadow: 4px 4px 2px rgba(colors.$primary-color, 0.5);
+    padding: spacing.$s-1;
+    border-radius: spacing.$s-1;
+    margin-bottom: spacing.$s-2;
   }
 
   &__list {
@@ -28,6 +35,7 @@
     display: flex;
     gap: spacing.$s-1;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__list-item {
@@ -40,15 +48,21 @@
     width: 100px;
     font-size: 14px;
     font-weight: bold;
+    box-shadow: 2px 2px 1px rgba(colors.$secondary-color--dark, 0.5);
   }
 
   &__title {
     font-weight: bold;
     margin: 0;
+    margin-bottom: spacing.$s-2;
   }
 
   &__value {
     margin-left: spacing.$s-2;
+  }
+
+  &__stat {
+    margin: spacing.$s-1;
   }
 }
 

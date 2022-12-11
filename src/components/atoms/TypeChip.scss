@@ -3,7 +3,7 @@
 
 @mixin type($type: colors.$normal-type-color) {
   background-color: $type;
-  box-shadow: 0 0 1px rgba($type, 0.25);
+  box-shadow: 2px 2px 1px rgba($type, 0.5);
   color: white;
 }
 
@@ -16,6 +16,7 @@
   width: 60px;
   font-size: 14px;
   font-weight: bold;
+  box-shadow: 4px 4px 2px colors.$primary-color;
 
   &--normal {
     @include type;

@@ -11,16 +11,20 @@
     padding: spacing.$s-2;
     background-color: white;
     border-radius: spacing.$s-1;
-    border: 1px solid colors.$primary-color;
-    width: 120px;
+    width: 100px;
     text-align: center;
     color: colors.$primary-color;
     margin: 0;
+    box-shadow: 4px 4px 1px rgba(colors.$secondary-color--dark, 0.5);
 
     &:hover,
     &:visited,
     &:active {
       color: colors.$primary-color--dark;
+    }
+
+    &:hover {
+      box-shadow: 8px 8px 4px rgba(colors.$secondary-color--dark, 0.5);
     }
   }
 

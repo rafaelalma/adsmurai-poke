@@ -85,6 +85,19 @@ export default function PokemonPage(): ReactElement {
               </ul>
             </div>
           </div>
+          <div className="pokemon-detail__row-wrapper">
+            <div>
+              <p className="pokemon-detail__title">Stats</p>
+              {pokemon.stats.map((stat) => {
+                return (
+                  <p className="pokemon-detail__stat">
+                    <strong>{stat.stat.name.toUpperCase()}</strong>:{" "}
+                    {stat.base_stat}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
         </>
       }
       bottomComponent={

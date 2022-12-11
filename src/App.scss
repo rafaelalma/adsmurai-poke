@@ -13,6 +13,7 @@
   border-radius: spacing.$s-1;
   margin: spacing.$s-2;
   margin-bottom: spacing.$s-1;
+  box-shadow: 2px 2px 1px rgba(colors.$secondary-color--dark, 0.5);
 
   &__list {
     padding: 0;
@@ -47,6 +48,7 @@
   margin: spacing.$s-2;
   margin-top: spacing.$s-1;
   flex-grow: 1;
+  box-shadow: 2px 2px 1px rgba(colors.$secondary-color--dark, 0.5);
 
   &--loading {
     opacity: 0.5;

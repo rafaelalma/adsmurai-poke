@@ -2,13 +2,6 @@
 @use "styles/spacing";
 @use "styles/fonts";
 
-.pokemon-page-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .pokemon-detail {
   display: flex;
   flex-direction: column;

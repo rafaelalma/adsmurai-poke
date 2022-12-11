@@ -1,7 +1,8 @@
 import { ReactElement } from "react";
 
+import "./TopBottomTemplate.scss";
+
 type TopBottomTemplateProps = {
-  wrapperClassName: string;
   topWrapperClassName?: string;
   title: string;
   topComponent: ReactElement;
@@ -9,14 +10,13 @@ type TopBottomTemplateProps = {
 };
 
 export default function TopBottomTemplate({
-  wrapperClassName,
   topWrapperClassName,
   title,
   topComponent,
   bottomComponent,
 }: TopBottomTemplateProps): ReactElement {
   return (
-    <div className={wrapperClassName}>
+    <div className="top-bottom-wrapper">
       <div className={topWrapperClassName ? topWrapperClassName : ""}>
         <h1 className="title">{title}</h1>
         {topComponent}

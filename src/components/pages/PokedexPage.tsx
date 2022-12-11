@@ -42,7 +42,6 @@ export default function PokedexPage(): ReactElement {
 
   return (
     <TopBottomTemplate
-      wrapperClassName="pokedex-page-wrapper"
       title="Pokedex"
       topComponent={<CardList pokemons={pokemons} />}
       bottomComponent={

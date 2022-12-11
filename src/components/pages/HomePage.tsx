@@ -2,11 +2,11 @@ import { ReactElement } from "react";
 import pokeball from "images/pokeball.png";
 
 import "./HomePage.scss";
+import MainTemplate from "components/templates/MainTemplate";
 
 export default function HomePage(): ReactElement {
   return (
-    <div className="home-page-wrapper">
-      <h1 className="title">Home</h1>
+    <MainTemplate wrapperClassName="home-page-wrapper" title="Home">
       <img className="home-image" src={pokeball} alt="pokeball" />
       <a
         className="home-link"
@@ -17,6 +17,6 @@ export default function HomePage(): ReactElement {
       >
         Pokemon icons created by Nikita Golubev - Flaticon
       </a>
-    </div>
+    </MainTemplate>
   );
 }

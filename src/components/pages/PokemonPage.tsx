@@ -36,7 +36,6 @@ export default function PokemonPage(): ReactElement {
 
   return (
     <TopBottomTemplate
-      wrapperClassName="pokemon-page-wrapper"
       topWrapperClassName="pokemon-detail"
       title={`#${pokemon.id} ${stringUtils.capitalize(pokemon.name)}`}
       topComponent={

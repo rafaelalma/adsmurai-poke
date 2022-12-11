@@ -1,0 +1,15 @@
+@use "styles/colors";
+@use "styles/spacing";
+
+.sprite {
+  background-color: white;
+  border-radius: spacing.$s-1;
+  padding: spacing.$s-1;
+  margin: spacing.$s-2;
+  border: 1px solid colors.$primary-color;
+
+  &--pending {
+    width: 96px;
+    height: 96px;
+  }
+}
